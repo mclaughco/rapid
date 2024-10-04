@@ -21,104 +21,104 @@ import (
 	"net/http"
 )
 
-func GetEndpoint(endpoint string, apiKey string, apiHost string) {
+// func GetEndpoint(endpoint string, apiKey string, apiHost string) {
 	
-	// Player List
-		// none
-	// Weekly Schedule
-		// week
-		// seasonType
-		// season
-	// Fantasy Point Projections
-		// week
-		// playerID
-		// teamID
-		// archiveSeason
-		// twoPointConversions
-		// passYards
-		// passAttempts
-		// passTD
-		// passCompletions
-		// passInterceptions
-		// pointsPerReception
-		// carries
-		// rushYards
-		// rushTD
-		// fumbles
-		// receivingYards
-		// receivingTD
-		// targets
-		// fgMade
-		// fgMissed
-		// xpMade
-		// xpMissed
-	// Roster
-		// teamID
-		// teamAbv
-		// archiveDate
-		// getStats
-		// fantasyPoints
-	// Average Draft Position
-		// adpType
-		// adpDate
-		// pos
-		// filterOut
-	// Box Score
-		// gameID
-		// playByPlay
-		// fantasyPoints
-		// twoPointConversions
-		// passYards
-		// passAttempts
-		// passTD
-		// passCompletions
-		// passInterceptions
-		// pointsPerReception
-		// carries
-		// rushYards
-		// rushTD
-		// fumbles
-		// receivingYards
-		// receivingTD
-		// targets
-		// defTD
-		// fgMade
-		// fgMissed
-	// Game Info
-		//
-		//
-		//
-	// Depth Charts
-		// none
-	// Betting Odds
-		//
-		//
-		//
-	// News and Headlines
-		//
-		//
-		//
-	// Scoreboard
-		//
-		//
-		//
-	// Team Schedule
-		//
-		//
-		//
-	// Daily Schedule
-		//
-		//
-		//
-	// Player Information
-		//
-		//
-		//
-	// Player Game Statistics
-		//
-		//
-		//
-}
+// 	// Player List
+// 		// none
+// 	// Weekly Schedule
+// 		// week
+// 		// seasonType
+// 		// season
+// 	// Fantasy Point Projections
+// 		// week
+// 		// playerID
+// 		// teamID
+// 		// archiveSeason
+// 		// twoPointConversions
+// 		// passYards
+// 		// passAttempts
+// 		// passTD
+// 		// passCompletions
+// 		// passInterceptions
+// 		// pointsPerReception
+// 		// carries
+// 		// rushYards
+// 		// rushTD
+// 		// fumbles
+// 		// receivingYards
+// 		// receivingTD
+// 		// targets
+// 		// fgMade
+// 		// fgMissed
+// 		// xpMade
+// 		// xpMissed
+// 	// Roster
+// 		// teamID
+// 		// teamAbv
+// 		// archiveDate
+// 		// getStats
+// 		// fantasyPoints
+// 	// Average Draft Position
+// 		// adpType
+// 		// adpDate
+// 		// pos
+// 		// filterOut
+// 	// Box Score
+// 		// gameID
+// 		// playByPlay
+// 		// fantasyPoints
+// 		// twoPointConversions
+// 		// passYards
+// 		// passAttempts
+// 		// passTD
+// 		// passCompletions
+// 		// passInterceptions
+// 		// pointsPerReception
+// 		// carries
+// 		// rushYards
+// 		// rushTD
+// 		// fumbles
+// 		// receivingYards
+// 		// receivingTD
+// 		// targets
+// 		// defTD
+// 		// fgMade
+// 		// fgMissed
+// 	// Game Info
+// 		//
+// 		//
+// 		//
+// 	// Depth Charts
+// 		// none
+// 	// Betting Odds
+// 		//
+// 		//
+// 		//
+// 	// News and Headlines
+// 		//
+// 		//
+// 		//
+// 	// Scoreboard
+// 		//
+// 		//
+// 		//
+// 	// Team Schedule
+// 		//
+// 		//
+// 		//
+// 	// Daily Schedule
+// 		//
+// 		//
+// 		//
+// 	// Player Information
+// 		//
+// 		//
+// 		//
+// 	// Player Game Statistics
+// 		//
+// 		//
+// 		//
+// }
 
 // Get NFL Teams
 		// sortBy
@@ -464,6 +464,7 @@ func GetPlayerGameStats(apiKey string, apiHost string) {
 
 // Add the API key and API host to the headers of the request before sending it
 func addHeaders(req *http.Request, apiKey string, apiHost string) *http.Request {
-	req = addHeaders(req, apiKey, apiHost)
+	req.Header.Add("x-rapidapi-key", apiKey)
+	req.Header.Add("x-rapidapi-host", apiHost)
 	return req
 }
